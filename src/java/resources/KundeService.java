@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
+package resources;
 
 import database.DataBase;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class KundeService {
     private Map<Long, Kunde> kunder = DataBase.getKunder();
     
     public KundeService(){
-        Gjest[] gjester1 = new Gjest[2];
+        /*Gjest[] gjester1 = new Gjest[2];
         gjester1[0] = new Gjest("brød", "spaghetti", "brownie");
         gjester1[1] = new Gjest("bønner", "hamburger", "sjokoladekake");
         Gjest[] gjester2 = new Gjest[3];
@@ -31,7 +31,7 @@ public class KundeService {
         Date dato1 = new Date();
         Date dato2 = new Date();
         kunder.put(1L, new Kunde(gjester1, dato1));
-        kunder.put(2L, new Kunde(gjester2, dato2));
+        kunder.put(2L, new Kunde(gjester2, dato2));*/
     }
     
     public List<Kunde> getAlleKunder(){
@@ -47,12 +47,17 @@ public class KundeService {
         return kunder.get(id);
     }
     
-    public void settInnBord(Kunde kunde){
-        kunde.setId(kunde.getId() + 1);
-        kunder.put((long)kunde.getId(), kunde);
+    public Kunde settInnKunde(Kunde kunde){
+        kunde.setId(kunder.size() + 1);
+        kunder.put(kunde.getId(), kunde);
+        return kunde;
     }
     
-    public void oppdaterKunde(Kunde kunde){
+    public Kunde oppdaterKunde(Kunde kunde){
+        if(kunde.getId() <= 0){
+            return null;
+        }
         kunder.put((long)kunde.getId(), kunde);
+        return kunde;
     }
 }

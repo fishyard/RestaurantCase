@@ -8,22 +8,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Gjest {
-    private int id;
-    private int idPointer = 0;
+    private long id;
+    //private static int idPointer = 0;
     private String forrett;
     private String hovedrett;
     private String dessert;
     
     public Gjest(){
-        idPointer++;
+        //idPointer++;
     }
     
-    public Gjest(String forrett, String hovedrett, String dessert){
+    public Gjest(long id, String forrett, String hovedrett, String dessert){
         this.forrett = forrett;
         this.hovedrett = hovedrett;
         this.dessert = dessert;
-        this.id = idPointer;
-        idPointer++;
+        this.id = id;
+        //idPointer++;
     }
     
     public String getForrett(){
@@ -50,11 +50,11 @@ public class Gjest {
         dessert = nyDessert;
     }
     
-    public int getId(){
+    public long getId(){
         return id;
     }
     
-    public void setId(int nyId){
+    public void setId(long nyId){
         id = nyId;
     }
 }

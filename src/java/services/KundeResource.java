@@ -1,4 +1,4 @@
-package resources;
+package services;
 
 
 import java.util.List;
@@ -10,7 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import models.Kunde;
-import services.KundeService;
+import resources.KundeService;
 
 
 @Path("/kunde")
@@ -21,17 +21,23 @@ public class KundeResource {
     KundeService kundeService = new KundeService();
     
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Kunde> getTekst(){
         return kundeService.getAlleKunder();
     }
     
     @GET
     @Path("/{kundeId}")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String test(@PathParam("kundeId")String kundeId){
-        //kundeService.getKunde(kundeId);
-        return "Path param " + kundeId;
+    @Produces(MediaType.APPLICATION_JSON)
+    public Kunde test(@PathParam("kundeId") long kundeId){
+        return kundeService.getKunde(kundeId);
+    }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Kunde addBord(Kunde kunde){
+        return kundeService.settInnKunde(kunde);
     }
     
     /*@GET

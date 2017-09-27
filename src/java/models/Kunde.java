@@ -12,18 +12,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Kunde {
     private Gjest[] gjester;
     private Date dato;
-    private int id;
-    private int idPointer = 0;
+    private long id;
+    //private static int idPointer = 0;
     
     public Kunde(){
-        idPointer++;
+        //idPointer++;
     }
     
-    public Kunde(Gjest[] gjester, Date dato){
+    public Kunde(long id, Gjest[] gjester, Date dato){
         this.gjester = gjester;
         this.dato = dato;
-        this.id = idPointer;
-        idPointer++;
+        this.id = id;
+        //idPointer++;
     }
     
     public int getAntGjester(){
@@ -34,11 +34,11 @@ public class Kunde {
         return gjester;
     }
     
-    public int getId(){
+    public long getId(){
         return id;
     }
     
-    public void setId(int nyId){
+    public void setId(long nyId){
         id = nyId;
     }
 }

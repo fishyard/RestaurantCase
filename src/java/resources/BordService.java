@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
+package resources;
 
 import database.DataBase;
 import java.util.ArrayList;
@@ -19,8 +19,8 @@ public class BordService {
     private Map<Long, Bord> bord = DataBase.getBord();
     
     public BordService(){
-        bord.put(1L, new Bord(4));
-        bord.put(2L, new Bord(6));
+        bord.put(1L, new Bord(1, 4));
+        bord.put(2L, new Bord(2, 6));
     }
     
     public List<Bord> getAlleBord(){
@@ -36,12 +36,21 @@ public class BordService {
         return bord.get(id);
     }
     
-    public void settInnBord(Bord etBord){
-        etBord.setId(etBord.getId() + 1);
-        bord.put((long)etBord.getId(), etBord);
+    public Bord settInnBord(Bord etBord){
+        etBord.setId(bord.size() + 1);
+        bord.put(etBord.getId(), etBord);
+        return etBord;
     }
     
-    public void oppdaterBord(Bord etBord){
+    public Bord oppdaterBord(Bord etBord){
+        if(etBord.getId() <= 0){
+            return null;
+        }
         bord.put((long)etBord.getId(), etBord);
+        return etBord;
+    }
+    
+    public Bord fjernBord(long id){
+        return bord.remove(id);
     }
 }

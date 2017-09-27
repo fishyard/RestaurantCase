@@ -10,18 +10,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Bord {
     private int plasser;
-    private int id;
-    private int idPointer = 0;
+    private long id;
+    //private static int idPointer = 0;
     public Kunde kunde;
     public Bord(){
-        idPointer++;
+        //idPointer++;
     }
     
-    public Bord(int plasser){
+    public Bord(long id, int plasser){
         this.plasser = plasser;
-        this.id = idPointer;
+        this.id = id;
         kunde = null;
-        idPointer++;
+        //idPointer++;
     }
     
     public void setKunde(Kunde nyKunde){
@@ -36,11 +36,11 @@ public class Bord {
         return kunde == null;
     }
     
-    public int getId(){
+    public long getId(){
         return id;
     }
     
-    public void setId(int nyId){
+    public void setId(long nyId){
         id = nyId;
     }
     
