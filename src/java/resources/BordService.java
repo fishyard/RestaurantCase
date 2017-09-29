@@ -46,7 +46,7 @@ public class BordService {
         if(etBord.getId() <= 0){
             return null;
         }
-        bord.put((long)etBord.getId(), etBord);
+        bord.put(etBord.getId(), etBord);
         return etBord;
     }
     

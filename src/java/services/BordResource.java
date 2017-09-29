@@ -54,6 +54,7 @@ public class BordResource {
     
     @DELETE
     @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public void deleteBord(@PathParam("id") long id){
         bordService.fjernBord(id);

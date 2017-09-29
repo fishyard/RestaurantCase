@@ -19,8 +19,8 @@ public class GjestService {
     private Map<Long, Gjest> gjester = DataBase.getGjester();
     
     public GjestService(){
-        gjester.put(1L, new Gjest(1, "testforrett1", "testhovedrett1", ""));
-        gjester.put(2L, new Gjest(1, "", "hamburgermedbacon", ""));
+        gjester.put(1L, new Gjest(1, "testforrett1", "testhovedrett1", "testdessert1"));
+        gjester.put(2L, new Gjest(2, "testforrett2", "testhovedrett2", "testdessert2"));
     }
     
     public List<Gjest> getAlleGjester(){

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Test GET/POST/PUT/DELETE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="testGet.js"></script>
+        <style type="text/css">
+            body{
+                padding:20px;
+            }
+            
+            #bordDiv{
+                margin: 0 auto;
+                border: 2px solid red;
+            }
+            
+            #gjestDiv{
+                margin: 0 auto;
+                border: 2px solid blue;
+            }
+            
+            #postDiv{
+                margin: 0 auto;
+                border: 2px solid green;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="bordDiv">
+            <ul id ="bords">
+                Bord:
+            </ul>
+        </div>
+        
+        <ul id ="kunder">
+        </ul>
+        <div id="gjestDiv">
+            <ul id ="gjester">
+                Gjester:
+            </ul>
+        </div>
+        
+        <div id="postDiv">
+            Plasser: <input id="plasserInn" type="number" step="1" min="1" value="1">
+            <button id="btnPost">
+                Legg til Bord
+            </button>
+        </div>
+    </body>
+</html>
