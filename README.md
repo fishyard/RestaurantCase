@@ -2,6 +2,6 @@
 
 Bruker PostMan til å teste ut REST.
 
-GET, POST, PUT og DELETE fungerte helt fint, men plutselig så fungerte bare GET og de andre methodene ga 405 Method not Allowed(har prøvd å finne hjelp på nettet men ikke funnet noe som fungerer hittil).
+GET, POST, PUT og DELETE fungerer helt fint i PostMan.
 
-Har ikke fått gjort front-end enda, men det kommer forløpende.
+Front end har jeg bare fått fikset GET hittil, har noe problemer med POST av ukjent grunn, på feilsøke litt mer på det.
